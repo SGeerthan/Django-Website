@@ -1,0 +1,19 @@
+
+{% extends 'home/base.html' %}
+
+{% block title %}Students | My Django Website{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Student Directory</h1>
+    <p>Here are some sample students.</p>
+
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} — Mark: {{ student.mark }}</li>
+        {% empty %}
+            <li>No students available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
